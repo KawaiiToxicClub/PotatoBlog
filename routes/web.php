@@ -2,15 +2,18 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Webアプリケーション用のルートを登録します。
+| すべてのルートは "web" ミドルウェアグループに割り当てられます。
 |
 */
 
@@ -18,14 +21,23 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// ダッシュボード（投稿一覧）
+Route::get('/dashboard', [PostController::class, 'top'])
+    ->middleware('auth')
+    ->name('dashboard');
 
+// 認証済みユーザー専用のルート
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // 投稿関連のルート
+    Route::get('list', [PostController::class, 'list'])->name('list'); // 投稿一覧
+    Route::resource('comments', CommentController::class)->only(['store', 'update', 'destroy']);
+    Route::get('/posts/{id}', [PostController::class, 'show'])->name('show');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('create');
+    Route::post('/posts', [PostController::class, 'store'])->name('store');
+
+    Route::post('/posts/{id}/like', [PostController::class, 'like'])->name('like');
+    Route::post('/posts/{id}/comment', [PostController::class, 'comment'])->name('comment');
 });
 
+// 認証ルート
 require __DIR__.'/auth.php';
