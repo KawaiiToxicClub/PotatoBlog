@@ -13,7 +13,7 @@ class PostController extends Controller
     public function top()
     {
         // データベースから投稿を取得
-        $posts = Post::latest()->take(5)->get(); 
+        $posts = Post::latest()->take(3)->get(); 
 
         // ビューに渡す
         return view('top', compact('posts'));
@@ -22,7 +22,7 @@ class PostController extends Controller
     public function list()
 {
     // 投稿を10件ずつページネーションで取得
-    $posts = Post::latest()->paginate(10);
+    $posts = Post::latest()->paginate(9);
 
     // ビューに渡す
     return view('list', compact('posts'));

@@ -25,7 +25,7 @@
         </a>
         <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <svg xmlns="" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <svg width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                 </svg>
             </button>
@@ -38,6 +38,7 @@
                 <li><a href="#" class="dropdown-item">o</a></li>
             </ul>
         </div>
+
     </header>
     <!-- End Header Section -->
     
@@ -49,7 +50,7 @@
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-    
+
     @endif
 
     @if (session('error'))
