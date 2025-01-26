@@ -14,6 +14,10 @@ git clone git@github.com:KawaiiToxicClub/PotatoBlog.git
 cd PotatoBlog
 
 composer install
+# もしphpで足りないみたいなエラーが出た場合次のやつを打ってからcomposer installをする
+sudo apt -y install php-bcmath php-mbstring php-xml php-zip php-curl
+
+
 ./vendor/bin/sail up
 ```
 ```bash
