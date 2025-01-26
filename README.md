@@ -19,6 +19,12 @@ composer install
 ```bash
 php artisan key:generat
 ```
+
+## mysql 操作
+```bash
+docker exec -it potatoblog-mysql-1 bash
+mysql -u {user} -p 
+```
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
