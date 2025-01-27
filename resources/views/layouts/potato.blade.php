@@ -35,7 +35,14 @@
                 <li><a href="{{ route('create') }}" class="dropdown-item">作成</a></li>
                 <li><a href="{{ route('login') }}" class="dropdown-item">login</a></li>
                 <li><a href="{{ route('register') }}" class="dropdown-item">signup</a></li>
-                <li><a href="{{ route('logout') }}" class="dropdown-item">ログアウト</a></li>
+                <li>
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="dropdown-item" style="border: none; background: none; padding: 0; cursor: pointer;">
+                        ログアウト
+                    </button>
+                </form>
+                </li>
             </ul>
         </div>
 
