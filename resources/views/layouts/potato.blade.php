@@ -35,7 +35,7 @@
                 <li><a href="{{ route('create') }}" class="dropdown-item">作成</a></li>
                 <li><a href="{{ route('login') }}" class="dropdown-item">login</a></li>
                 <li><a href="{{ route('register') }}" class="dropdown-item">signup</a></li>
-                <li><a href="#" class="dropdown-item">o</a></li>
+                <li><a href="{{ route('logout') }}" class="dropdown-item">ログアウト</a></li>
             </ul>
         </div>
 
@@ -59,8 +59,7 @@
         </div>
     @endif
 
-<!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybHyE4k2M6h3pZb94J6CpJ8E9Le6o/8/poC5g7gOd7z9gk81F4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-cuD+ABkXrx6fO6Ekmnt9vLvYZFAGZtnTQyT+v4GgFnwzjftDwsLtHRGjpctkh9hb" crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
